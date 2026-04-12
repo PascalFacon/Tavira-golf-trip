@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golftrip Tavira — Oktober 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-deep: #1a3c2a;
+            --green: #2d6a4f;
+            --green-light: #40916c;
+            --green-pale: #d8f3dc;
+            --sand: #faf8f4;
+            --sand-dark: #f0ebe0;
+            --dark: #1b1b1b;
+            --grey: #555;
+            --grey-light: #999;
+            --white: #fff;
+            --accent: #c4913c;
+            --accent-light: #f5e6cc;
+            --blue: #2a6f8e;
+            --blue-light: #e8f4fd;
+            --red: #c0392b;
+            --red-light: #fde8e6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--sand);
+            color: var(--dark);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, var(--green-deep) 0%, var(--green) 50%, var(--green-light) 100%);
+            color: var(--white);
+            padding: 3.5rem 1.5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--accent);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.3rem;
+        }
+        .hero .subtitle {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+        .hero .dates {
+            margin-top: 1.2rem;
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Overview strip ── */
+        .overview-strip {
+            background: var(--green-deep);
+            color: var(--white);
+            padding: 1.25rem 1.5rem;
+        }
+        .overview-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .overview-item {
+            text-align: center;
+            min-width: 80px;
+        }
+        .overview-item .num {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .overview-item .lbl {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            margin-top: 0.15rem;
+        }
+
+        /* ── Container ── */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 1.5rem 2rem;
+        }
+
+        /* ── Section headers ── */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 2.5rem 0 1.25rem;
+        }
+        .day-badge {
+            width: 44px; height: 44px;
+            background: var(--green);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .section-title-group {
+            flex: 1;
+        }
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .section-subtitle {
+            font-size: 0.8rem;
+            color: var(--grey-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .section-line {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 2.5rem 0 1.25rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--green);
+        }
+        .section-line::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--green-light);
+            opacity: 0.25;
+        }
+
+        /* ── Cards ── */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            position: relative;
+        }
+        .card.transport { border-left: 4px solid var(--blue); }
+        .card.hotel { border-left: 4px solid var(--accent); }
+        .card.golf { border-left: 4px solid var(--green); }
+        .card.info { border-left: 4px solid var(--grey-light); }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        .card-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card-label.transport-label { color: var(--blue); }
+        .card-label.hotel-label { color: var(--accent); }
+
+        .badge {
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 0.2rem 0.65rem;
+            border-radius: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge-confirmed { background: var(--green-pale); color: var(--green); }
+        .badge-booked { background: var(--blue-light); color: var(--blue); }
+
+        .card h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--dark);
+        }
+        .card-detail {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--grey);
+            margin-bottom: 0.3rem;
+            line-height: 1.5;
+        }
+        .card-detail .icon {
+            width: 1.3rem;
+            text-align: center;
+            flex-shrink: 0;
+            font-size: 0.95rem;
+        }
+        .card-detail a { color: var(--blue); text-decoration: none; }
+        .card-detail a:hover { text-decoration: underline; }
+
+        .ref-box {
+            display: inline-block;
+            background: var(--sand);
+            border: 1px solid var(--sand-dark);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--dark);
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Flight timeline ── */
+        .flight-timeline {
+            background: var(--sand);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0 0.5rem;
+        }
+        .flight-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .flight-time {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            min-width: 50px;
+        }
+        .flight-dot-line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .flight-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--blue);
+            background: var(--white);
+        }
+        .flight-line {
+            width: 2px;
+            height: 28px;
+            background: repeating-linear-gradient(to bottom, var(--blue) 0, var(--blue) 3px, transparent 3px, transparent 6px);
+        }
+        .flight-city {
+            font-size: 0.9rem;
+            color: var(--grey);
+        }
+        .flight-city strong { color: var(--dark); font-weight: 600; }
+        .flight-meta {
+            font-size: 0.78rem;
+            color: var(--grey-light);
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #e8e4dc;
+        }
+
+        /* ── Tee time groups ── */
+        .tee-group {
+            background: var(--sand);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin-top: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .tee-group-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--green);
+            margin-bottom: 0.35rem;
+        }
+        .tee-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--grey);
+            padding: 0.15rem 0;
+        }
+        .tee-row .price { font-weight: 600; color: var(--dark); }
+        .tee-ref { font-size: 0.78rem; color: var(--grey-light); }
+        .day-total {
+            text-align: right;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--green);
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        /* ── Timeline connector ── */
+        .timeline-event {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--grey);
+        }
+        .timeline-time {
+            font-weight: 600;
+            color: var(--dark);
+            min-width: 48px;
+            font-size: 0.85rem;
+        }
+
+        /* ── Note boxes ── */
+        .note-box {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.25rem;
+            margin-top: 1.25rem;
+            font-size: 0.88rem;
+            color: #6b5a2e;
+        }
+        .note-box strong {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+        .note-box.blue {
+            background: var(--blue-light);
+            border-color: var(--blue);
+            color: #2c3e50;
+        }
+        .note-box.green {
+            background: var(--green-pale);
+            border-color: var(--green);
+            color: #1a3c2a;
+        }
+
+        /* ── Practical info ── */
+        .practical-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .practical-item {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.1rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+        .practical-item .pi-icon { font-size: 1.3rem; margin-bottom: 0.4rem; }
+        .practical-item .pi-title {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--green);
+            margin-bottom: 0.25rem;
+        }
+        .practical-item .pi-body {
+            font-size: 0.85rem;
+            color: var(--grey);
+            line-height: 1.5;
+        }
+
+        /* ── Cost summary ── */
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.75rem;
+        }
+        .cost-table td {
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            color: var(--grey);
+            border-bottom: 1px solid #f0ebe0;
+        }
+        .cost-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .cost-table tr.total td {
+            border-top: 2px solid var(--green);
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--green);
+            padding-top: 0.6rem;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            font-size: 0.78rem;
+            color: var(--grey-light);
+            border-top: 1px solid var(--sand-dark);
+        }
+
+        /* ── Map section ── */
+        .map-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        #trip-map { width: 100%; height: 400px; }
+        .map-loc {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .map-loc a { color: var(--dark); text-decoration: none; }
+        .map-loc a:hover { color: var(--blue); text-decoration: underline; }
+        .map-dot {
+            display: inline-block;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .map-dot.airport { background: var(--blue); }
+        .map-dot.hotel { background: var(--accent); }
+        .map-dot.golf { background: var(--green); }
+
+        /* ── Course description ── */
+        .course-desc {
+            font-size: 0.88rem;
+            color: var(--grey);
+            line-height: 1.6;
+            margin: 0.5rem 0 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--sand);
+            border-radius: 8px;
+            border-left: 3px solid var(--green-pale);
+        }
+        .course-desc .designer {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        /* ── Dining & evening section ── */
+        .evening-section {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px dashed #e0dbd0;
+        }
+        .evening-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .resto-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid #f0ebe0;
+            margin-bottom: 0.75rem;
+        }
+        .resto-card .resto-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+        .resto-card .resto-name a { color: var(--dark); text-decoration: none; }
+        .resto-card .resto-name a:hover { color: var(--blue); }
+        .resto-card .resto-type {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.35rem;
+        }
+        .resto-card .resto-body {
+            font-size: 0.82rem;
+            color: var(--grey);
+            line-height: 1.5;
+        }
+        .resto-card .resto-meta {
+            font-size: 0.75rem;
+            color: var(--grey-light);
+            margin-top: 0.35rem;
+        }
+        .resto-pick {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.1rem 0.45rem;
+            border-radius: 3px;
+            margin-left: 0.4rem;
+            vertical-align: middle;
+        }
+        .bar-tip {
+            font-size: 0.84rem;
+            color: var(--grey);
+            padding: 0.6rem 0.75rem;
+            background: var(--sand);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+        .bar-tip strong { color: var(--dark); }
+
+        /* ── Players table ── */
+        .player-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.5rem 0;
+        }
+        .player-table th {
+            text-align: left;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--grey-light);
+            padding: 0.4rem 0.5rem;
+            border-bottom: 2px solid var(--sand-dark);
+        }
+        .player-table td {
+            padding: 0.5rem 0.5rem;
+            font-size: 0.88rem;
+            color: var(--grey);
+            border-bottom: 1px solid #f0ebe0;
+        }
+        .player-table td:first-child { font-weight: 600; color: var(--dark); white-space: nowrap; }
+        .player-table td:nth-child(2) { text-align: center; white-space: nowrap; }
+        .player-table td:nth-child(3) { font-size: 0.82rem; word-break: break-all; }
+        .player-table td:nth-child(4) { white-space: nowrap; font-size: 0.82rem; }
+        .player-table a { color: var(--blue); text-decoration: none; }
+        .player-table a:hover { text-decoration: underline; }
+
+        /* ── Quick reference ── */
+        .qr-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .qr-table th {
+            text-align: left;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--grey-light);
+            padding: 0.4rem 0.3rem;
+            border-bottom: 2px solid var(--sand-dark);
+        }
+        .qr-table td {
+            padding: 0.45rem 0.3rem;
+            font-size: 0.84rem;
+            color: var(--grey);
+            border-bottom: 1px solid #f0ebe0;
+        }
+        .qr-table td:first-child { font-weight: 600; color: var(--dark); }
+
+        /* ── Checklist reminders ── */
+        .reminder-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .reminder-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0ebe0;
+            font-size: 0.88rem;
+            color: var(--grey);
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+        .reminder-list li:last-child { border-bottom: none; }
+        .reminder-list .ri { flex-shrink: 0; width: 1.3rem; text-align: center; }
+
+        /* ── Flight comp ── */
+        .flight-comp {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+        .flight-comp-group {
+            background: var(--sand);
+            border-radius: 8px;
+            padding: 0.6rem 0.75rem;
+        }
+        .flight-comp-group .fc-title {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+        .flight-comp-group .fc-players {
+            font-size: 0.84rem;
+            color: var(--grey);
+            line-height: 1.5;
+        }
+
+        /* ── Intro banner ── */
+        .intro-banner {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+        .intro-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 60%;
+            display: block;
+        }
+        .intro-banner .img-credit {
+            position: absolute;
+            bottom: 6px;
+            right: 10px;
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.6);
+        }
+        .intro-banner .img-credit a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+        /* ── Section images ── */
+        .section-img {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            height: 220px;
+        }
+        .section-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .intro-text {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 1.75rem 1.5rem 0.5rem;
+        }
+        .intro-text p {
+            font-size: 0.95rem;
+            color: var(--grey);
+            line-height: 1.7;
+        }
+        .intro-text .sign {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* ── Desktop (>820px) ── */
+        @media (min-width: 821px) {
+            .intro-banner { height: 340px; }
+            .section-img { height: 280px; }
+        }
+
+        /* ── Tablet (601–820px) ── */
+        @media (max-width: 820px) {
+            .overview-item .num { font-size: 1.3rem; }
+        }
+
+        /* ── Mobiel (<600px) ── */
+        @media (max-width: 600px) {
+            /* Hero & intro */
+            .hero { padding: 2.5rem 1rem 2rem; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero .subtitle { font-size: 0.9rem; }
+            .hero .dates { font-size: 0.82rem; padding: 0.4rem 1rem; }
+            .intro-banner { height: 180px; }
+            .intro-text { padding: 1.25rem 1rem 0.25rem; }
+            .intro-text p { font-size: 0.88rem; }
+
+            /* Overview strip */
+            .overview-inner { gap: 0.25rem; }
+            .overview-item .num { font-size: 1.2rem; }
+            .overview-item .lbl { font-size: 0.6rem; letter-spacing: 0.5px; }
+
+            /* Container & sections */
+            .container { padding: 0 0.75rem 2rem; }
+            .section-header { margin: 2rem 0 1rem; }
+            .section-line { margin: 2rem 0 1rem; }
+
+            /* Cards */
+            .card { padding: 1.1rem; border-radius: 10px; }
+            .card h3 { font-size: 1.05rem; }
+
+            /* Section images — shorter on mobile */
+            .section-img { height: 160px; border-radius: 10px; }
+
+            /* Player table — horizontally scrollable */
+            .player-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -0.25rem; }
+            .player-table { min-width: 580px; }
+            .player-table th, .player-table td { padding: 0.4rem 0.35rem; font-size: 0.78rem; }
+
+            /* Quick reference table — scrollable */
+            .qr-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -0.25rem; }
+            .qr-table { min-width: 520px; }
+            .qr-table th, .qr-table td { padding: 0.35rem 0.25rem; font-size: 0.78rem; }
+
+            /* Flight timeline */
+            .flight-row { gap: 0.5rem; }
+            .flight-time { font-size: 1rem; min-width: 44px; }
+
+            /* Flight compositions — stacked */
+            .flight-comp { grid-template-columns: 1fr; gap: 0.4rem; }
+
+            /* Tee groups */
+            .tee-row { flex-direction: column; gap: 0.1rem; }
+            .tee-row .price { text-align: left; }
+
+            /* Course description */
+            .course-desc { font-size: 0.82rem; padding: 0.6rem 0.75rem; }
+
+            /* Practical grid — single column */
+            .practical-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+
+            /* Cost table */
+            .cost-table td { font-size: 0.82rem; padding: 0.35rem 0; }
+
+            /* Reminder list */
+            .reminder-list li { font-size: 0.82rem; }
+
+            /* Clickable phone/email — bigger touch targets */
+            .player-table a, .card-detail a, .resto-meta a {
+                padding: 0.15rem 0;
+                display: inline-block;
+            }
+
+            /* Map — shorter on mobile */
+            #trip-map { height: 280px; }
+
+            /* Evening section */
+            .resto-card { padding: 0.75rem; }
+            .bar-tip { font-size: 0.8rem; }
+
+            /* Footer */
+            .footer { padding: 1.5rem 1rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head>
+<body>
+
+<div class="hero">
+    <h1>Golftrip Tavira</h1>
+    <p class="subtitle">Oost-Algarve, Portugal</p>
+    <div class="dates">13 &mdash; 17 oktober 2026</div>
+</div>
+
+<div class="overview-strip">
+    <div class="overview-inner">
+        <div class="overview-item">
+            <div class="num">7</div>
+            <div class="lbl">Spelers</div>
+        </div>
+        <div class="overview-item">
+            <div class="num">4</div>
+            <div class="lbl">Nachten</div>
+        </div>
+        <div class="overview-item">
+            <div class="num">3</div>
+            <div class="lbl">Rondes</div>
+        </div>
+        <div class="overview-item">
+            <div class="num">&euro;1.475</div>
+            <div class="lbl">Per persoon *</div>
+        </div>
+    </div>
+</div>
+
+<div class="intro-banner">
+    <img src="img/hero-quinta-da-ria.jpg" alt="Quinta da Ria, Oost-Algarve">
+</div>
+
+<div class="intro-text">
+    <p>
+        Mannen, hier is het volledige plan. Vier nachten Tavira, drie rondes golf op drie verschillende banen tussen het Ria Formosa-reservaat en de Spaanse grens. Alles is geboekt: vluchten, hotel, starttijden (enkel nog lokaal transport). We spelen individueel Stableford met handicap. De flights voor de eerste twee dagen liggen vast. Op de finaledag worden de flights samengesteld op basis van het klassement.
+    </p>
+    <p style="margin-top:0.5rem;">
+        Lees deze pagina door, noteer de data in je agenda, en check de checklist onderaan. Vragen of wijzigingen: laat het weten.
+    </p>
+    <div class="sign">&mdash; Pascal</div>
+</div>
+
+<div class="container">
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- DEELNEMERS                               -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-line">De Groep</div>
+
+    <div class="card info">
+        <h3>7 Golfers</h3>
+        <div class="player-table-wrap">
+        <table class="player-table">
+            <thead>
+                <tr><th>Naam</th><th>Hcp</th><th>E-mail</th><th>Telefoon</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Pascal Facon</td><td>29</td><td><a href="mailto:pascal@facon.be">pascal@facon.be</a></td><td><a href="tel:+32495551613">+32 495 55 16 13</a></td></tr>
+                <tr><td>Arne De Schuyteneer</td><td>17</td><td><a href="mailto:arne.de.schuyteneer@telenet.be">arne.de.schuyteneer@telenet.be</a></td><td><a href="tel:+32472920397">+32 472 92 03 97</a></td></tr>
+                <tr><td>Wim De Saedeleer</td><td>17</td><td><a href="mailto:wim.desaedeleer@fluvius.be">wim.desaedeleer@fluvius.be</a></td><td><a href="tel:+32476226259">+32 476 22 62 59</a></td></tr>
+                <tr><td>Joris Van Damme</td><td>29</td><td><a href="mailto:van.damme.joris@telenet.be">van.damme.joris@telenet.be</a></td><td><a href="tel:+32478951365">+32 478 95 13 65</a></td></tr>
+                <tr><td>Koen Ponnet</td><td>17</td><td><a href="mailto:koen.ponnet@outlook.com">koen.ponnet@outlook.com</a></td><td><a href="tel:+32493486142">+32 493 48 61 42</a></td></tr>
+                <tr><td>Kris D'Hooghe</td><td>16</td><td><a href="mailto:krisd@telenet.be">krisd@telenet.be</a></td><td><a href="tel:+32475641403">+32 475 64 14 03</a></td></tr>
+                <tr><td>Geert Henderickx</td><td>32</td><td><a href="mailto:geert.henderickx01@telenet.be">geert.henderickx01@telenet.be</a></td><td><a href="tel:+32473217151">+32 473 21 71 51</a></td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- COMPETITIE                               -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="card info" style="margin-top:0;">
+        <h3>Spelformule &mdash; Stableford Individueel</h3>
+        <p style="font-size:0.88rem;color:var(--grey);line-height:1.6;margin-bottom:0.5rem;">
+            Drie rondes individueel Stableford met handicap. De flights voor woensdag en donderdag liggen vast (zie hieronder). De samenstelling op vrijdag hangt af van het Stableford-klassement na de eerste twee rondes: de vier beste scores spelen samen in de laatste flight op Benamor.
+        </p>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- QUICK REFERENCE                          -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-line">Op &eacute;&eacute;n Blik</div>
+
+    <div class="card info">
+        <h3>Starttijden &amp; Programma</h3>
+        <div class="qr-table-wrap">
+        <table class="qr-table">
+            <thead>
+                <tr><th>Dag</th><th>Baan</th><th>Tee 1</th><th>Tee 2</th><th>Vertrek hotel</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Di 13 okt</td><td colspan="3" style="color:var(--blue);">Aankomst Faro &mdash; landing 11:20</td><td>&mdash;</td>
+                </tr>
+                <tr>
+                    <td>Wo 14 okt</td><td>Quinta da Ria</td><td>13:20</td><td>13:40</td><td>~09:45</td>
+                </tr>
+                <tr>
+                    <td>Do 15 okt</td><td>Quinta do Vale</td><td>13:10</td><td>13:20</td><td>~11:00</td>
+                </tr>
+                <tr>
+                    <td>Vr 16 okt</td><td>Benamor Golf</td><td>10:56</td><td>11:04</td><td>~10:00</td>
+                </tr>
+                <tr>
+                    <td>Za 17 okt</td><td colspan="3" style="color:var(--blue);">Vertrek Faro &mdash; vlucht 12:10</td><td>~10:15</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- MAP OVERVIEW                             -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-line">Overzicht Regio</div>
+
+    <div class="map-wrapper">
+        <div id="trip-map"></div>
+    </div>
+
+    <div class="card info" style="margin-bottom:1.5rem;">
+        <h3>Oost-Algarve &mdash; Jullie Speelveld</h3>
+        <p style="font-size:0.9rem;color:var(--grey);line-height:1.65;margin-bottom:0.75rem;">
+            Minder toeristisch dan Vilamoura of Albufeira, meer karakter. Tavira is een authentiek Moors stadje aan de rivier Gil&atilde;o met een historisch centrum vol goede restaurants. Alle locaties liggen binnen een compact stuk van 50 km langs de kust en de Guadiana:
+        </p>
+        <p style="font-size:0.88rem;color:var(--grey);line-height:1.8;">
+            <span class="map-loc"><span class="map-dot airport"></span> <a href="https://www.google.com/maps/place/Faro+Airport" target="_blank">Faro Airport (FAO)</a></span> &mdash; aankomst &amp; vertrek, westelijk uiteinde<br>
+            <span class="map-loc"><span class="map-dot hotel"></span> <a href="https://www.google.com/maps/search/AP+Maria+Nova+Lounge+Tavira" target="_blank">AP Maria Nova Lounge, Tavira</a></span> &mdash; thuisbasis, op een heuvel, 5 min lopen naar centrum<br>
+            <span class="map-loc"><span class="map-dot golf"></span> <a href="https://www.google.com/maps/search/Benamor+Golf+Conceicao+de+Tavira" target="_blank">Benamor Golf</a></span> &mdash; dichtste baan, ~10 min ten noorden van het hotel<br>
+            <span class="map-loc"><span class="map-dot golf"></span> <a href="https://www.google.com/maps/search/Quinta+da+Ria+Golf+Vila+Nova+de+Cacela" target="_blank">Quinta da Ria</a></span> &mdash; ~15 min naar het oosten, aan de Ria Formosa kust<br>
+            <span class="map-loc"><span class="map-dot golf"></span> <a href="https://www.google.com/maps/search/Quinta+do+Vale+Golf+Castro+Marim" target="_blank">Quinta do Vale Golf</a></span> &mdash; verst naar het oosten, ~25 min, aan de Guadiana bij Castro Marim
+        </p>
+
+        <div class="note-box green" style="margin-top:1rem;">
+            <strong>9-zits Van</strong>
+            Wordt opgehaald op Faro Airport bij aankomst, bijvoorbeel te boeken via <a href="https://www.economycarrentals.com" target="_blank" style="color:var(--green);font-weight:600;">Economy Car Rentals</a>. Geraamde kost: &euro;400 huur + &euro;100 brandstof + &euro;50 tol (A22). Kris rijdt. Alle verplaatsingen &mdash; luchthaven, hotel, golfbanen, restaurants &mdash; met het busje. Geen taxi's nodig.
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- VLUCHTEN                                 -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-line">Vluchten</div>
+
+    <!-- Heenreis -->
+    <div class="card transport">
+        <div class="card-header">
+            <div class="card-label transport-label">Heenreis &middot; Di 13 Okt</div>
+            <span class="badge badge-booked">Geboekt</span>
+        </div>
+        <h3>Brussel &rarr; Faro</h3>
+        <div class="card-detail"><span class="icon">&#9992;</span> Brussels Airlines SN3801 &middot; Economy Light &middot; Airbus A320 &middot; Nonstop</div>
+        <div class="card-detail"><span class="icon">&#128203;</span> Boeking: <span class="ref-box">9BKFZX</span> &nbsp; Ticket: <span class="ref-box">0822303925834</span></div>
+
+        <div class="flight-timeline">
+            <div class="flight-row">
+                <div class="flight-time">09:25</div>
+                <div class="flight-dot-line">
+                    <div class="flight-dot"></div>
+                    <div class="flight-line"></div>
+                </div>
+                <div class="flight-city"><strong>BRU</strong> &mdash; Brussels Airport</div>
+            </div>
+            <div class="flight-row">
+                <div class="flight-time">11:20</div>
+                <div class="flight-dot-line">
+                    <div class="flight-dot"></div>
+                </div>
+                <div class="flight-city"><strong>FAO</strong> &mdash; Faro Airport</div>
+            </div>
+            <div class="flight-meta">Vliegtijd: 2u55 &middot; Handbagage inbegrepen (8 kg) &middot; G&eacute;&eacute;n ruimbagage &middot; Geen stoel geselecteerd</div>
+        </div>
+
+        <div class="note-box blue" style="margin-top:0.75rem;">
+            <strong>Golfclubs meenemen?</strong>
+            Economy Light heeft g&eacute;&eacute;n ruimbagage. Golfclubs als extra baggage boeken kost ca. &euro;30&ndash;50 per richting per stuk via brusselsairlines.com. Wie dit wil, dient dit v&oacute;&oacute;r de vlucht te regelen.
+        </div>
+    </div>
+
+    <!-- Terugreis -->
+    <div class="card transport">
+        <div class="card-header">
+            <div class="card-label transport-label">Terugreis &middot; Za 17 Okt</div>
+            <span class="badge badge-booked">Geboekt</span>
+        </div>
+        <h3>Faro &rarr; Brussel</h3>
+        <div class="card-detail"><span class="icon">&#9992;</span> Brussels Airlines SN3802 &middot; Economy Light &middot; Airbus A320 &middot; Nonstop</div>
+
+        <div class="flight-timeline">
+            <div class="flight-row">
+                <div class="flight-time">12:10</div>
+                <div class="flight-dot-line">
+                    <div class="flight-dot"></div>
+                    <div class="flight-line"></div>
+                </div>
+                <div class="flight-city"><strong>FAO</strong> &mdash; Faro Airport</div>
+            </div>
+            <div class="flight-row">
+                <div class="flight-time">16:00</div>
+                <div class="flight-dot-line">
+                    <div class="flight-dot"></div>
+                </div>
+                <div class="flight-city"><strong>BRU</strong> &mdash; Brussels Airport</div>
+            </div>
+            <div class="flight-meta">Vliegtijd: 2u50 &middot; Laatste check-in: 60 min v&oacute;&oacute;r vertrek</div>
+        </div>
+
+        <div class="card-detail" style="margin-top:0.5rem"><span class="icon">&#128176;</span> Vluchtprijs per persoon: <strong>&euro;218,31</strong> (retour, incl. taksen)</div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- ACCOMMODATIE                              -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-line">Accommodatie</div>
+
+    <div class="section-img">
+        <img src="img/hotel-pool.jpg" alt="AP Maria Nova Lounge &mdash; zwembad en pool bar">
+    </div>
+
+    <div class="card hotel">
+        <div class="card-header">
+            <div class="card-label hotel-label">4 Nachten &middot; 13&ndash;17 Oktober</div>
+            <span class="badge badge-booked">Geboekt</span>
+        </div>
+        <h3>AP Maria Nova Lounge &mdash; Adults Friendly</h3>
+        <div class="card-detail"><span class="icon">&#128205;</span> <a href="https://www.google.com/maps/search/AP+Maria+Nova+Lounge+Tavira+Portugal" target="_blank">Rua Ant&oacute;nio Pinheiro, 8800-323 Tavira</a></div>
+        <div class="card-detail"><span class="icon">&#128222;</span> <a href="tel:+351289540149">+351 289 540 149</a></div>
+        <div class="card-detail"><span class="icon">&#128203;</span> Booking.com: <span class="ref-box">5639971814</span> &nbsp; PIN: <span class="ref-box">1226</span></div>
+        <div class="card-detail"><span class="icon">&#127968;</span> 7 kamers &middot; Twin Room with Pool View &middot; Eenpersoonsbezetting</div>
+        <div class="card-detail"><span class="icon">&#127860;</span> Ontbijt inbegrepen (buffet)</div>
+        <div class="card-detail"><span class="icon">&#128197;</span> Check-in: 14:00 &ndash; 00:00 &middot; Check-out: v&oacute;&oacute;r 12:00</div>
+        <div class="card-detail"><span class="icon">&#128176;</span> Totaal: <strong>&euro;5.462,10</strong> (&euro;780,30 per kamer) &middot; Betaling 9 okt via Revolut Pay</div>
+        <div class="card-detail"><span class="icon">&#10003;</span> Gratis annulering tot 10 oktober 2026, 23:59 lokale tijd</div>
+        <p style="font-size:0.84rem;color:var(--grey);margin-top:0.6rem;line-height:1.5;">
+            Modern 4-sterren boutique hotel op een heuvel, 5 minuten lopen naar het centrum. Zwembad, spa, en Nomad Rooftop Bar met 360&deg; uitzicht over Tavira en de Ria Formosa. Parking beschikbaar voor de bus.
+        </p>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- DAG 1: AANKOMST                          -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-header">
+        <div class="day-badge">1</div>
+        <div class="section-title-group">
+            <div class="section-subtitle">Dinsdag 13 oktober 2026</div>
+            <div class="section-title">Aankomst in Tavira</div>
+        </div>
+    </div>
+
+    <div class="section-img">
+        <img src="img/tavira-centrum.jpg" alt="Tavira centrum, Oost-Algarve">
+    </div>
+
+    <div class="card transport">
+        <div class="card-header">
+            <div class="card-label transport-label">Reisdag</div>
+        </div>
+        <h3>Brussel &rarr; Tavira</h3>
+
+        <div class="timeline-event"><span class="timeline-time">09:25</span> Vertrek Brussel (BRU) &mdash; SN3801</div>
+        <div class="timeline-event"><span class="timeline-time">11:20</span> Aankomst Faro Airport (FAO)</div>
+        <div class="timeline-event"><span class="timeline-time">~11:45</span> 9-zits bus ophalen bij Faro Airport (Economy Car Rentals)</div>
+        <div class="timeline-event"><span class="timeline-time">~12:00</span> Kris rijdt naar Tavira (~35 min, <a href="https://www.google.com/maps/dir/Faro+Airport/AP+Maria+Nova+Lounge+Tavira" target="_blank">route</a>)</div>
+        <div class="timeline-event"><span class="timeline-time">~12:30</span> Lunch in Tavira centrum (check-in pas vanaf 14:00)</div>
+        <div class="timeline-event"><span class="timeline-time">14:00</span> Check-in AP Maria Nova Lounge</div>
+        <div class="timeline-event"><span class="timeline-time">Namiddag</span> Verkenning Tavira: Romeinse brug, Camera Obscura-toren, Mercado da Ribeira</div>
+        <div class="timeline-event"><span class="timeline-time">Zonsonderg.</span> Eerste drankje op de Nomad Rooftop Bar van het hotel</div>
+        <div class="timeline-event"><span class="timeline-time">~20:00</span> Diner bij Aquasul</div>
+    </div>
+
+    <div class="evening-section" style="border-top:none;">
+        <div class="evening-title">&#127860; Dinsdag &mdash; Diner &amp; Avond</div>
+
+        <div class="resto-card">
+            <div class="resto-name"><a href="https://www.google.com/maps/place/Aquasul+Tavira" target="_blank">Aquasul</a><span class="resto-pick">Aankomstdiner</span></div>
+            <div class="resto-type">Mediterraans &middot; Internationaal</div>
+            <div class="resto-body">Gezellig restaurant in een traditioneel Algarvisch huis, vlakbij de Romeinse brug. Nederlandse eigenaresse Antoinette. Gevarieerd menu met goede steaks en verse vis. Populair bij expats en toeristen &mdash; altijd vol, dus tijdig reserveren.</div>
+            <div class="resto-meta">R. Dr. Augusto da Silva Carvalho 11 &middot; &euro;&euro; (~&euro;35&ndash;40 pp) &middot; Tel: <a href="tel:+351281325166">+351 281 325 166</a></div>
+        </div>
+
+        <div class="bar-tip">
+            <strong>&#127864; Nomad Rooftop Bar</strong> &mdash; Eerste stop bij aankomst, of nightcap na het diner. Cocktails met 360&deg; uitzicht over Tavira. In het hotel, dus geen verplaatsing nodig. Open tot 01:00.
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- DAG 2: QUINTA DA RIA                     -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-header">
+        <div class="day-badge">2</div>
+        <div class="section-title-group">
+            <div class="section-subtitle">Woensdag 14 oktober 2026</div>
+            <div class="section-title">Quinta da Ria</div>
+        </div>
+    </div>
+
+    <div class="section-img">
+        <img src="img/quinta-da-ria.jpg" alt="Quinta da Ria &mdash; Ria Formosa en Atlantische Oceaan">
+    </div>
+
+    <div class="card golf">
+        <div class="card-header">
+            <div class="card-label">Golfdag 1</div>
+            <span class="badge badge-confirmed">Bevestigd</span>
+        </div>
+        <h3>Quinta da Ria</h3>
+        <div class="course-desc">
+            <div class="designer">Ontwerp: Rocky Roquemore &middot; Par 72 &middot; 6.053 m (yellow tees) &middot; Slope 131 &middot; Geopend 1999</div>
+            Midden in het Ria Formosa natuurreservaat, een van de mooiste banen van de Oost-Algarve. Brede, open fairways met uitzicht op de Atlantische Oceaan, de zandeilanden en het historische dorpje Cacela Velha op de kliffen. Strategische bunkers en waterhazards houden het interessant, maar de echte troef is de omgeving &mdash; je golft in een beschermd moerasgebied. Regelmatig flamingo's en andere watervogels. Ideale opener: uitdagend genoeg, maar vergevingsgezind.
+        </div>
+        <div class="card-detail"><span class="icon">&#128205;</span> <a href="https://www.google.com/maps/search/Quinta+da+Ria+Golf+Vila+Nova+de+Cacela" target="_blank">Quinta da Ria, Vila Nova de Cacela</a></div>
+        <div class="card-detail"><span class="icon">&#9971;</span> Quinta da Ria course &mdash; Tee 1, 18 holes</div>
+        <div class="card-detail"><span class="icon">&#9200;</span> Aanwezig om 12:50 (30 min v&oacute;&oacute;r eerste tee)</div>
+        <div class="card-detail"><span class="icon">&#128663;</span> ~15 min rijden (<a href="https://www.google.com/maps/dir/AP+Maria+Nova+Lounge+Tavira/Quinta+da+Ria+Golf" target="_blank">route</a>)</div>
+        <div class="card-detail"><span class="icon">&#9917;</span> Oefenfaciliteiten: driving range (300 m, 70 bays + 5 overdekt), putting green, chipping area, bunker</div>
+        <div class="card-detail"><span class="icon">&#128203;</span> Geboekt via LeadingCourses &middot; Gratis annulering tot 360 uur (15 dagen) v&oacute;&oacute;r de ronde</div>
+
+        <div class="note-box" style="margin-top:0.75rem;margin-bottom:0.5rem;">
+            <strong>Buggy's</strong>
+            Niet inbegrepen in de green fee. Bel de receptie 3&ndash;4 weken op voorhand om buggy's te reserveren. Verplicht voor Geert en Arne.
+        </div>
+
+        <div style="font-size:0.82rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.5px;margin:0.75rem 0 0.35rem;">Flights &mdash; Woensdag</div>
+        <div class="flight-comp">
+            <div class="flight-comp-group">
+                <div class="fc-title">Flight 1 &mdash; 13:20</div>
+                <div class="fc-players">Geert, Kris, Arne</div>
+            </div>
+            <div class="flight-comp-group">
+                <div class="fc-title">Flight 2 &mdash; 13:40</div>
+                <div class="fc-players">Pascal, Joris, Koen, Wim</div>
+            </div>
+        </div>
+
+        <div class="tee-group">
+            <div class="tee-group-title">Starttijd 1 &mdash; 13:20</div>
+            <div class="tee-row"><span>3 spelers, 18 holes</span><span class="price">&euro;431,03</span></div>
+            <div class="tee-ref">LeadingCourses ID: 1662878-1662880-1662882</div>
+        </div>
+        <div class="tee-group">
+            <div class="tee-group-title">Starttijd 2 &mdash; 13:40</div>
+            <div class="tee-row"><span>4 spelers, 18 holes</span><span class="price">&euro;574,71</span></div>
+            <div class="tee-ref">LeadingCourses ID: 1662884-1662886-1662888-1662890</div>
+        </div>
+
+        <div class="day-total">Dagtotaal: &euro;1.005,74</div>
+    </div>
+
+    <div class="note-box green" style="margin-top:0;">
+        <strong>Ochtendprogramma &mdash; Vertrek hotel ~09:45</strong>
+        We rijden vroeg naar Quinta da Ria om de oefenfaciliteiten te gebruiken v&oacute;&oacute;r de ronde. Het complex heeft een van de beste practice areas van de Oost-Algarve:
+    </div>
+
+    <div class="card info" style="margin-top:0;">
+        <h3>Oefenfaciliteiten Quinta da Ria</h3>
+        <div class="card-detail"><span class="icon">&#9917;</span> <strong>Driving range</strong> &mdash; 300 meter lang, 70 grasmatten (Noord- en Zuidzijde) + 5 overdekte bays met kunstgras. Rangeballen apart te koop.</div>
+        <div class="card-detail"><span class="icon">&#9971;</span> <strong>Putting greens</strong> &mdash; twee grote, golvende greens onderhouden op championship-niveau (Ria en Cima green).</div>
+        <div class="card-detail"><span class="icon">&#127947;</span> <strong>Short game area</strong> &mdash; chipping- en pitching-zones met oefenbunker. In het seizoen worden er 7 aparte short-game oefenstations ingericht.</div>
+        <div class="card-detail"><span class="icon">&#128187;</span> <strong>Golfsimulator</strong> &mdash; highspeed-camera swing-analyse beschikbaar in het clubhuis.</div>
+        <div class="card-detail"><span class="icon">&#127939;</span> <strong>Pitch &amp; Putt</strong> &mdash; 9-holes academie-parcours, ideaal om te warmlopen.</div>
+    </div>
+
+    <div class="note-box" style="margin-top:0;">
+        <strong>&#127860; Lunch in het clubhuis &mdash; Ria Terrace</strong>
+        Na het inschieten lunchen we in het clubhuis van Quinta da Ria. Portugese keuken met lokale ingredi&euml;nten, onder leiding van chef Humberto Paulos. Op woensdag staat er fish &amp; chips op het menu. Ook burgers, salades, pizza's en desserts. Terras met uitzicht op de baan en het Ria Formosa-reservaat. Rating: 5.0/5 op TripAdvisor. Tel: +351 918 700 335.
+    </div>
+
+    <div class="evening-section">
+        <div class="evening-title">&#127860; Woensdag &mdash; Diner &amp; Avond</div>
+
+        <div class="resto-card">
+            <div class="resto-name"><a href="https://www.google.com/maps/search/Ti+Maria+Tapas+Garrafeira+Tavira" target="_blank">Ti Maria Tapas &amp; Garrafeira</a><span class="resto-pick">Tapasavond</span></div>
+            <div class="resto-type">Tapas &middot; Portugese Wijnkelder</div>
+            <div class="resto-body">Creatieve tapas in een sfeervol huis met binnenplaats, sinds 1958. Tonijntartaar, inktvistempura, Portugese tapas met een twist. Uitgebreide wijnkaart &mdash; ideaal om verschillende gerechten te delen aan tafel na de eerste ronde.</div>
+            <div class="resto-meta">R. dos Fumeiros de Tr&aacute;s 51 &middot; &euro;&euro; (~&euro;40&ndash;45 pp incl. wijn) &middot; Reserveren aanbevolen</div>
+        </div>
+
+        <div class="bar-tip">
+            <strong>&#127863; Tavira Lounge</strong> &mdash; Wijnbar aan de rivier. Portugese wijnen, port-tasting mogelijk. Chique maar relaxed terras aan het water. R. Gon&ccedil;alo Velho 16-18. Tel: +351 281 381 034.
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- DAG 3: QUINTA DO VALE                    -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-header">
+        <div class="day-badge">3</div>
+        <div class="section-title-group">
+            <div class="section-subtitle">Donderdag 15 oktober 2026</div>
+            <div class="section-title">Quinta do Vale Golf</div>
+        </div>
+    </div>
+
+    <div class="section-img">
+        <img src="img/quinta-do-vale.jpg" alt="Quinta do Vale Golf, hole 1 &mdash; Castro Marim">
+    </div>
+
+    <div class="card golf">
+        <div class="card-header">
+            <div class="card-label">Golfdag 2</div>
+            <span class="badge badge-confirmed">Bevestigd</span>
+        </div>
+        <h3>Quinta do Vale Golf</h3>
+        <div class="course-desc">
+            <div class="designer">Ontwerp: Severiano Ballesteros &middot; Par 72 &middot; 6-6-6 layout &middot; Slope 129 &middot; Geopend 2008</div>
+            Het enige Seve Ballesteros-ontwerp in de Oost-Algarve, en een van zijn laatste creaties. Verspreid over 75 hectare heuvelachtig terrein boven de Guadiana &mdash; Spanje is zichtbaar aan de overkant. De unieke 6-6-6 configuratie (zes par 3's, zes par 4's, zes par 5's) is zeldzaam in de golfarchitectuur en zorgt voor een bijzonder ritme. Brede fairways omlijst door kurkeiken en olijfbomen, met water op negen holes. Doglegs en strategische bunkers belonen plaatsing boven pure kracht. De front nine is technisch met water, de back nine meer open met hoogteverschillen en dramatische views richting Spanje.
+        </div>
+        <div class="card-detail"><span class="icon">&#128205;</span> <a href="https://www.google.com/maps/search/Quinta+do+Vale+Golf+Castro+Marim" target="_blank">Quinta do Vale Golf, Castro Marim</a></div>
+        <div class="card-detail"><span class="icon">&#9971;</span> Tee 1, 18 holes</div>
+        <div class="card-detail"><span class="icon">&#9200;</span> Aanwezig om 12:40 (30 min v&oacute;&oacute;r eerste tee)</div>
+        <div class="card-detail"><span class="icon">&#128663;</span> ~25 min rijden (<a href="https://www.google.com/maps/dir/AP+Maria+Nova+Lounge+Tavira/Quinta+do+Vale+Golf+Castro+Marim" target="_blank">route</a>)</div>
+        <div class="card-detail"><span class="icon">&#9917;</span> Oefenfaciliteiten: driving range (2 zones, 95 plaatsen), putting green, chipping area, 9-holes Pitch &amp; Putt</div>
+        <div class="card-detail"><span class="icon">&#128203;</span> Geboekt via LeadingCourses &middot; Gratis annulering tot 360 uur (15 dagen) v&oacute;&oacute;r de ronde</div>
+
+        <div class="note-box green" style="margin-top:0.75rem;margin-bottom:0.5rem;">
+            <strong>Buggy's inbegrepen &amp; betaald</strong>
+            Buggy's zitten in de green fee en zijn al betaald via LeadingCourses. Niets extra bij te betalen op de baan.
+        </div>
+
+        <div style="font-size:0.82rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.5px;margin:0.75rem 0 0.35rem;">Flights &mdash; Donderdag</div>
+        <div class="flight-comp">
+            <div class="flight-comp-group">
+                <div class="fc-title">Flight 1 &mdash; 13:10</div>
+                <div class="fc-players">Geert, Koen, Wim</div>
+            </div>
+            <div class="flight-comp-group">
+                <div class="fc-title">Flight 2 &mdash; 13:20</div>
+                <div class="fc-players">Pascal, Joris, Kris, Arne</div>
+            </div>
+        </div>
+
+        <div class="tee-group">
+            <div class="tee-group-title">Starttijd 1 &mdash; 13:10</div>
+            <div class="tee-row"><span>3 spelers, 18 holes + 2 buggy's (betaald)</span><span class="price">&euro;369,05</span></div>
+            <div class="tee-ref">LeadingCourses ID: 592742-592745-592748</div>
+        </div>
+        <div class="tee-group">
+            <div class="tee-group-title">Starttijd 2 &mdash; 13:20</div>
+            <div class="tee-row"><span>4 spelers, 18 holes + 2 buggy's (betaald)</span><span class="price">&euro;464,29</span></div>
+            <div class="tee-ref">LeadingCourses ID: 592751-592754-592757-592760</div>
+        </div>
+
+        <div class="day-total">Dagtotaal: &euro;833,34</div>
+    </div>
+
+    <div class="note-box green" style="margin-top:0;">
+        <strong>Ochtendprogramma &mdash; Vertrek hotel ~11:00</strong>
+        We vertrekken iets vroeger dan strikt nodig om te lunchen in het clubhuis van Quinta do Vale v&oacute;&oacute;r de ronde. Daarna tijd om in te schieten op de driving range (2 zones, 95 plaatsen) en de putting green.
+    </div>
+
+    <div class="note-box" style="margin-top:0;">
+        <strong>&#127860; Lunch in het clubhuis &mdash; Quinta do Vale</strong>
+        Traditionele Portugese keuken met nadruk op verse vis en zeevruchten. Ruim, elegant clubhuis met groot zonneterras en panoramisch uitzicht over 15 van de 18 holes en de Guadiana richting Spanje. Perfecte plek om rustig te lunchen voor de tweede ronde. Tel: +351 281 531 615.
+    </div>
+
+    <div class="evening-section">
+        <div class="evening-title">&#127860; Donderdag &mdash; Diner &amp; Avond</div>
+
+        <div class="resto-card">
+            <div class="resto-name"><a href="https://www.google.com/maps/search/Casa+do+Polvo+Tasquinha+Santa+Luzia" target="_blank">Casa do Polvo Tasquinha</a><span class="resto-pick">Polvo-avond</span></div>
+            <div class="resto-type">Octopus Specialist &middot; Michelin-selectie</div>
+            <div class="resto-body">In Santa Luzia, de &ldquo;hoofdstad van de polvo&rdquo; (5 min rijden). Elk gerecht draait om octopus: gegrild, &agrave; lagareiro met olijfolie en knoflook, carpaccio, rijstgerechten, soepen. Aan de Ria Formosa waterfront met uitzicht op de vissersboten. Klein restaurant &mdash; reserveren is essentieel. Tip: bestel verschillende bereidingen om te delen.</div>
+            <div class="resto-meta">Av. Eng. Duarte Pacheco 8, Santa Luzia &middot; &euro;&euro; (~&euro;35&ndash;40 pp) &middot; Alleen telefonisch reserveren</div>
+        </div>
+
+        <div class="bar-tip">
+            <strong>&#127866; Porta Nova</strong> &mdash; Klein caf&eacute; bij de oude stadspoort. Port wine, lokale sfeer, historische setting. D&eacute; plek voor een digestief waar de locals komen. R. dos Namarrais 16.
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- DAG 4: BENAMOR                           -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-header">
+        <div class="day-badge">4</div>
+        <div class="section-title-group">
+            <div class="section-subtitle">Vrijdag 16 oktober 2026</div>
+            <div class="section-title">Benamor Golf &mdash; Finaledag</div>
+        </div>
+    </div>
+
+    <div class="section-img">
+        <img src="img/benamor.jpg" alt="Benamor Golf, Concei&ccedil;&atilde;o de Tavira">
+    </div>
+
+    <div class="card golf">
+        <div class="card-header">
+            <div class="card-label">Golfdag 3 &mdash; Finale</div>
+            <span class="badge badge-confirmed">Bevestigd</span>
+        </div>
+        <h3>Benamor Golf</h3>
+        <div class="course-desc">
+            <div class="designer">Ontwerp: Sir Henry Cotton &middot; Par 71 &middot; 5.456 m &middot; Slope 118 &middot; Geopend 2000</div>
+            De laatste baan die Sir Henry Cotton ontwierp v&oacute;&oacute;r zijn dood in 1987 &mdash; postuum gerealiseerd in 2000 door de familie Martins Dias. Cotton liet zich inspireren door de oude kerk naast het clubhuis en de spectaculaire locatie. Duizenden eeuwenoude olijf-, kurk-, johannesbrood-, vijgen- en amandelbomen zijn verweven in de speelstrategie. De layout beloont plaatsing en shotselection boven afstand. Prachtig uitzicht op de bergen in het noorden en de Atlantische Oceaan in het zuiden. Een baan met echt karakter en geschiedenis &mdash; de perfecte afsluiter.
+        </div>
+        <div class="card-detail"><span class="icon">&#128205;</span> <a href="https://www.google.com/maps/search/Benamor+Golf+Conceicao+de+Tavira" target="_blank">Benamor Golf, Concei&ccedil;&atilde;o de Tavira</a></div>
+        <div class="card-detail"><span class="icon">&#9971;</span> Tee 1, 18 holes</div>
+        <div class="card-detail"><span class="icon">&#9200;</span> Aanwezig om 10:25 (30 min v&oacute;&oacute;r eerste tee)</div>
+        <div class="card-detail"><span class="icon">&#128663;</span> ~10 min rijden (<a href="https://www.google.com/maps/dir/AP+Maria+Nova+Lounge+Tavira/Benamor+Golf" target="_blank">route</a>)</div>
+        <div class="card-detail"><span class="icon">&#9917;</span> Oefenfaciliteiten: driving range (16 matten + gras), 9-holes putting green, chipping/pitching green met bunker</div>
+        <div class="card-detail"><span class="icon">&#128203;</span> Geboekt via LeadingCourses &middot; Gratis annulering tot 48 uur v&oacute;&oacute;r de ronde</div>
+
+        <div class="note-box green" style="margin-top:0.75rem;margin-bottom:0.5rem;">
+            <strong>&#128084; Uniform De Kluizen &mdash; Rode polo</strong>
+            Finaledag = clubdag. Iedereen speelt in de rode polo van De Kluizen.
+        </div>
+
+        <div class="note-box" style="margin-top:0.5rem;margin-bottom:0.5rem;">
+            <strong>3 Buggy's gereserveerd &mdash; Betalen aan receptie</strong>
+            Bevestigd door Petra (LeadingCourses Support): 3 buggy's over beide starttijden. Richtprijs: &euro;40&ndash;60 per buggy voor 18 holes. Betalen bij de receptie van de club. Annuleer op voorhand als ze niet nodig zijn &mdash; de club kan niet-geannuleerde buggy's aanrekenen.
+        </div>
+
+        <div style="font-size:0.82rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.5px;margin:0.75rem 0 0.35rem;">Flights &mdash; Vrijdag (Finale)</div>
+        <div class="flight-comp">
+            <div class="flight-comp-group">
+                <div class="fc-title">Flight 1 &mdash; 10:56</div>
+                <div class="fc-players">Geert, Pascal, Joris</div>
+            </div>
+            <div class="flight-comp-group">
+                <div class="fc-title">Flight 2 &mdash; 11:04</div>
+                <div class="fc-players">Top 4 Stableford na dag 2 &amp; 3</div>
+            </div>
+        </div>
+
+        <div class="tee-group">
+            <div class="tee-group-title">Starttijd 1 &mdash; 10:56</div>
+            <div class="tee-row"><span>3 spelers, 18 holes + 1 buggy (betalen aan baan)</span><span class="price">&euro;339,12</span></div>
+            <div class="tee-ref">LeadingCourses ID: 592917-592919-592921</div>
+        </div>
+        <div class="tee-group">
+            <div class="tee-group-title">Starttijd 2 &mdash; 11:04</div>
+            <div class="tee-row"><span>4 spelers, 18 holes + 2 buggy's (betalen aan baan)</span><span class="price">&euro;452,15</span></div>
+            <div class="tee-ref">LeadingCourses ID: 592923-592925-592927-592929</div>
+        </div>
+
+        <div class="day-total">Dagtotaal: &euro;791,27</div>
+    </div>
+
+    <div class="note-box blue" style="margin-top:0;">
+        <strong>Ochtendronde &mdash; vertrek hotel om ~10:00</strong>
+        Dit is de enige ochtendronde. Ontbijt om 8:30&ndash;9:00, vertrek om 10:00. Lunch: sandwich kopen aan de baan (pro shop of halfway house). Na de ronde: prijsuitreiking in het clubhuis van Benamor, dan terug naar het hotel om op te frissen voor het afsluitdiner.
+    </div>
+
+    <div class="evening-section">
+        <div class="evening-title">&#127860; Vrijdag &mdash; Afsluitdiner &amp; Laatste Avond</div>
+
+        <div class="resto-card">
+            <div class="resto-name"><a href="https://www.google.com/maps/search/Primitivo+Tavira" target="_blank">Primitivo</a><span class="resto-pick">Afsluitdiner</span></div>
+            <div class="resto-type">Grill &amp; Vis &middot; Wood Fire</div>
+            <div class="resto-body">De perfecte afsluiter. Upscale grill met houtvuurovens en open vuur. Verse vis van de dag, uitstekende steaks, Portugese wijnen. Modern-rustiek interieur met terras. Rating 4,8/5. Reserveren verplicht voor een groep van 7 &mdash; dit is het populairste restaurant van Tavira.</div>
+            <div class="resto-meta">Pra&ccedil;a Dr. Ant&oacute;nio Padinha 11 &middot; &euro;&euro;&euro; (~&euro;45&ndash;50 pp) &middot; Tel: <a href="tel:+351968738511">+351 968 738 511</a></div>
+        </div>
+
+        <div class="bar-tip">
+            <strong>&#127866; Patrick's Bar</strong> &mdash; Irish pub in het centrum. Bier, voetbal op TV, internationale sfeer. &ldquo;Er is er altijd &eacute;&eacute;n&rdquo; &mdash; voor wie na het afsluitdiner nog een pint wil.
+        </div>
+
+        <div style="font-size:0.82rem;color:var(--grey-light);margin-top:0.5rem;font-style:italic;">
+            Reserve-opties indien Primitivo vol: <a href="https://www.google.com/maps/search/Artefact+restaurant+Tavira" target="_blank" style="color:var(--grey);">Artefact</a> (farm-to-table, &euro;&euro;&euro;) of <a href="https://www.google.com/maps/search/Tres+Palmeiras+Tavira" target="_blank" style="color:var(--grey);">Tr&ecirc;s Palmeiras</a> (all-you-can-eat gegrilde vis, &euro;10&ndash;17 pp &mdash; waar de Portugezen zelf gaan eten).
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- DAG 5: VERTREK                           -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-header">
+        <div class="day-badge">5</div>
+        <div class="section-title-group">
+            <div class="section-subtitle">Zaterdag 17 oktober 2026</div>
+            <div class="section-title">Terug naar Huis</div>
+        </div>
+    </div>
+
+    <div class="card transport">
+        <div class="card-header">
+            <div class="card-label transport-label">Vertrekdag</div>
+        </div>
+        <h3>Tavira &rarr; Brussel</h3>
+
+        <div class="timeline-event"><span class="timeline-time">~08:30</span> Ontbijt in hotel</div>
+        <div class="timeline-event"><span class="timeline-time">~10:00</span> Check-out (v&oacute;&oacute;r 12:00)</div>
+        <div class="timeline-event"><span class="timeline-time">~10:15</span> Kris rijdt naar Faro Airport (~35 min) &amp; bus inleveren</div>
+        <div class="timeline-event"><span class="timeline-time">11:10</span> Laatste check-in Faro Airport (60 min v&oacute;&oacute;r vertrek)</div>
+        <div class="timeline-event"><span class="timeline-time">12:10</span> Vertrek Faro (FAO) &mdash; SN3802</div>
+        <div class="timeline-event"><span class="timeline-time">16:00</span> Aankomst Brussel (BRU)</div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- KOSTENOVERZICHT                          -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-line">Kostenoverzicht</div>
+
+    <div class="card info">
+        <h3>Bevestigde Kosten</h3>
+        <table class="cost-table">
+            <tr><td>Vlucht (retour, per persoon)</td><td>&euro;218,31</td></tr>
+            <tr><td>Hotel (7 kamers, 4 nachten, ontbijt incl.)</td><td>&euro;5.462,10</td></tr>
+            <tr><td>Quinta da Ria &mdash; wo 14 okt</td><td>&euro;1.005,74</td></tr>
+            <tr><td>Quinta do Vale &mdash; do 15 okt (incl. buggy's)</td><td>&euro;833,34</td></tr>
+            <tr><td>Benamor Golf &mdash; vr 16 okt</td><td>&euro;791,27</td></tr>
+            <tr class="total"><td>Totaal green fees</td><td>&euro;2.630,35</td></tr>
+        </table>
+    </div>
+
+    <div class="card info" style="margin-top:0;">
+        <h3>Raming per Persoon</h3>
+        <table class="cost-table">
+            <tr><td>Vlucht (retour)</td><td>&euro;218</td></tr>
+            <tr><td>Hotel (4 nachten, ontbijt)</td><td>&euro;780</td></tr>
+            <tr><td>Green fees (3 rondes)</td><td>&euro;376</td></tr>
+            <tr><td>Transport (bus + brandstof + tol)</td><td>&euro;79</td></tr>
+            <tr><td>Buggy's Benamor (3 stuks / 7 pers.)</td><td>~&euro;21</td></tr>
+            <tr><td>Buggy's Quinta da Ria (nog te reserveren)</td><td>~&euro;13</td></tr>
+            <tr class="total"><td>Subtotaal bevestigd</td><td>~&euro;1.487</td></tr>
+        </table>
+        <div style="font-size:0.82rem;color:var(--grey-light);margin-top:0.5rem;">
+            Bovenop het bevestigde bedrag: 4 avondmaaltijden (~&euro;35&ndash;50 pp/avond = &euro;160&ndash;200), drankjes en persoonlijke uitgaven (~&euro;75&ndash;100). <strong>Verwachte totaalkost per persoon: &euro;1.700&ndash;1.800.</strong>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- BELANGRIJKE REMINDERS                    -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-line">Belangrijke Reminders</div>
+
+    <div class="card info">
+        <ul class="reminder-list">
+            <li><span class="ri">&#9971;</span> <strong>Handicapcertificaat meebrengen</strong> &mdash; alle drie de banen vereisen een geldig handicapbewijs van je thuisclub.</li>
+            <li><span class="ri">&#128084;</span> <strong>Vrijdag: uniform De Kluizen</strong> &mdash; op de finaledag spelen we in de rode polo van De Kluizen. Niet vergeten in te pakken!</li>
+            <li><span class="ri">&#129439;</span> <strong>Muggenmelk meenemen</strong> &mdash; de banen liggen in moerasgebied (Ria Formosa) en langs de rivier. Volgens reviews kan het in de namiddag en avond muggen regenen, zeker op Quinta da Ria en Quinta do Vale. Lange broek is geen slecht idee.</li>
+            <li><span class="ri">&#9200;</span> <strong>30 minuten v&oacute;&oacute;r starttijd aanwezig</strong> &mdash; tijd om in te checken, inschieten en naar de eerste tee te wandelen.</li>
+            <li><span class="ri">&#128176;</span> <strong>LeadingCourses betaling</strong> &mdash; geen vooruitbetaling. Je wordt pas belast na het verstrijken van de annuleringstermijn.</li>
+            <li><span class="ri">&#128197;</span> <strong>Annulering Quinta da Ria &amp; Quinta do Vale</strong> &mdash; gratis wijzigen tot 15 dagen v&oacute;&oacute;r de ronde. Daarna wordt er aangerekend.</li>
+            <li><span class="ri">&#128197;</span> <strong>Annulering Benamor</strong> &mdash; gratis wijzigen tot 48 uur v&oacute;&oacute;r de ronde.</li>
+            <li><span class="ri">&#128197;</span> <strong>Hotel annulering</strong> &mdash; gratis tot 10 oktober 2026.</li>
+            <li><span class="ri">&#128222;</span> <strong>Buggy's Quinta da Ria</strong> &mdash; bel de receptie 3&ndash;4 weken op voorhand. Verplicht voor Geert en Arne, optioneel voor de rest.</li>
+            <li><span class="ri">&#128222;</span> <strong>Restaurants reserveren</strong> &mdash; Aquasul, Ti Maria, Casa do Polvo en Primitivo tijdig boeken voor een groep van 7.</li>
+        </ul>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- PRAKTISCHE INFO                          -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-line">Praktische Informatie</div>
+
+    <div class="practical-grid">
+        <div class="practical-item">
+            <div class="pi-icon">&#9728;&#65039;</div>
+            <div class="pi-title">Weer</div>
+            <div class="pi-body">Half oktober in de Oost-Algarve: overdag 22&ndash;25&deg;C, 's avonds 14&ndash;17&deg;C. Overwegend zonnig, af en toe een korte bui. Zonsondergang rond 18:45. Neem een lichte jas mee voor de avond.</div>
+        </div>
+        <div class="practical-item">
+            <div class="pi-icon">&#128178;</div>
+            <div class="pi-title">Valuta</div>
+            <div class="pi-body">Euro (&euro;). Kaarten overal aanvaard. Bankautomaten in het centrum van Tavira.</div>
+        </div>
+        <div class="practical-item">
+            <div class="pi-icon">&#128663;</div>
+            <div class="pi-title">Vervoer</div>
+            <div class="pi-body">9-zits bus via Economy Car Rentals, ophalen en terugbrengen op Faro Airport. Kris D'Hooghe rijdt. Alle banen binnen 10&ndash;25 min. Tavira centrum is walkable distance vanaf het hotel.</div>
+        </div>
+        <div class="practical-item">
+            <div class="pi-icon">&#128268;</div>
+            <div class="pi-title">Tolwegen</div>
+            <div class="pi-body">De A22 (Via do Infante) is een tolweg langs de kust &mdash; sneller en comfortabeler. De N125 is gratis maar trager. Budget ~&euro;50 voor tol over 5 dagen.</div>
+        </div>
+        <div class="practical-item">
+            <div class="pi-icon">&#127380;</div>
+            <div class="pi-title">Noodgevallen</div>
+            <div class="pi-body">Noodnummer: <strong>112</strong><br>Hotel: <a href="tel:+351289540149">+351 289 540 149</a></div>
+        </div>
+        <div class="practical-item">
+            <div class="pi-icon">&#9971;</div>
+            <div class="pi-title">Op de Baan</div>
+            <div class="pi-body">Driving range inbegrepen in de green fee op alle drie de banen. Pro shops met ballen, handschoenen, tees. Kleedkamers met douches beschikbaar.</div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- BOEKINGSREFERENTIES                      -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="section-line">Alle Boekingsreferenties</div>
+
+    <div class="card info">
+        <table class="cost-table" style="margin-top:0;">
+            <tr><td>Brussels Airlines (vlucht)</td><td><span class="ref-box">9BKFZX</span></td></tr>
+            <tr><td>Booking.com (hotel)</td><td><span class="ref-box">5639971814</span></td></tr>
+            <tr><td>Hotel PIN</td><td><span class="ref-box">1226</span></td></tr>
+            <tr><td>E-ticket nummer</td><td><span class="ref-box">0822303925834</span></td></tr>
+            <tr><td>Miles &amp; More kaart</td><td><span class="ref-box">***********7261</span></td></tr>
+            <tr><td>LeadingCourses (alle starttijden)</td><td>Zie booking ID's per ronde</td></tr>
+        </table>
+    </div>
+
+</div>
+
+<div class="footer">
+    Golftrip Tavira 2026 &middot; Organisatie: Pascal Facon &middot; Laatst bijgewerkt 11 april 2026
+</div>
+
+<script>
+(function() {
+    var map = L.map('trip-map').setView([37.10, -7.70], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 16
+    }).addTo(map);
+
+    var locations = [
+        { name: 'Faro Airport (FAO)', lat: 37.0144, lng: -7.9659, color: '#2a6f8e' },
+        { name: 'AP Maria Nova Lounge, Tavira', lat: 37.1275, lng: -7.6505, color: '#c4913c' },
+        { name: 'Benamor Golf', lat: 37.135, lng: -7.618, color: '#2d6a4f' },
+        { name: 'Quinta da Ria', lat: 37.165, lng: -7.548, color: '#2d6a4f' },
+        { name: 'Quinta do Vale', lat: 37.230, lng: -7.440, color: '#2d6a4f' }
+    ];
+
+    locations.forEach(function(loc) {
+        L.circleMarker([loc.lat, loc.lng], {
+            radius: 10,
+            fillColor: loc.color,
+            color: '#fff',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.9
+        }).addTo(map).bindPopup('<strong>' + loc.name + '</strong>');
+    });
+
+    map.fitBounds(locations.map(function(loc) { return [loc.lat, loc.lng]; }), { padding: [30, 30] });
+})();
+</script>
+
+</body>
+</html>
