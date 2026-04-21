@@ -583,6 +583,51 @@
         .player-table a { color: var(--blue); text-decoration: none; }
         .player-table a:hover { text-decoration: underline; }
 
+        /* ── Strokes table ── */
+        .strokes-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.5rem 0;
+        }
+        .strokes-table th {
+            text-align: left;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--grey-light);
+            padding: 0.4rem 0.5rem;
+            border-bottom: 2px solid var(--sand-dark);
+        }
+        .strokes-table th:not(:first-child) { text-align: center; }
+        .strokes-table td {
+            padding: 0.5rem 0.5rem;
+            font-size: 0.88rem;
+            color: var(--grey);
+            border-bottom: 1px solid #f0ebe0;
+        }
+        .strokes-table td:first-child { font-weight: 600; color: var(--dark); white-space: nowrap; }
+        .strokes-table td:not(:first-child) {
+            text-align: center;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--green);
+        }
+        .strokes-table tfoot td {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--grey-light);
+            border-bottom: none;
+            padding-top: 0.25rem;
+        }
+        .strokes-table tfoot td:not(:first-child) {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            color: var(--grey-light);
+        }
+
         /* ── Quick reference ── */
         .qr-table {
             width: 100%;
@@ -748,6 +793,11 @@
             .player-table { min-width: 580px; }
             .player-table th, .player-table td { padding: 0.4rem 0.35rem; font-size: 0.78rem; }
 
+            /* Strokes table — scrollable */
+            .strokes-table { min-width: 480px; }
+            .strokes-table th, .strokes-table td { padding: 0.35rem 0.25rem; font-size: 0.78rem; }
+            .strokes-table td:not(:first-child) { font-size: 0.88rem; }
+
             /* Quick reference table — scrollable */
             .qr-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -0.25rem; }
             .qr-table { min-width: 520px; }
@@ -854,13 +904,13 @@
                 <tr><th>Naam</th><th>Hcp</th><th>E-mail</th><th>Telefoon</th></tr>
             </thead>
             <tbody>
-                <tr><td>Pascal Facon</td><td>29</td><td><a href="mailto:pascal@facon.be">pascal@facon.be</a></td><td><a href="tel:+32495551613">+32 495 55 16 13</a></td></tr>
-                <tr><td>Arne De Schuyteneer</td><td>17</td><td><a href="mailto:arne.de.schuyteneer@telenet.be">arne.de.schuyteneer@telenet.be</a></td><td><a href="tel:+32472920397">+32 472 92 03 97</a></td></tr>
-                <tr><td>Wim De Saedeleer</td><td>17</td><td><a href="mailto:wim.desaedeleer@fluvius.be">wim.desaedeleer@fluvius.be</a></td><td><a href="tel:+32476226259">+32 476 22 62 59</a></td></tr>
-                <tr><td>Joris Van Damme</td><td>29</td><td><a href="mailto:van.damme.joris@telenet.be">van.damme.joris@telenet.be</a></td><td><a href="tel:+32478951365">+32 478 95 13 65</a></td></tr>
-                <tr><td>Koen Ponnet</td><td>17</td><td><a href="mailto:koen.ponnet@outlook.com">koen.ponnet@outlook.com</a></td><td><a href="tel:+32493486142">+32 493 48 61 42</a></td></tr>
-                <tr><td>Kris D'Hooghe</td><td>16</td><td><a href="mailto:krisd@telenet.be">krisd@telenet.be</a></td><td><a href="tel:+32475641403">+32 475 64 14 03</a></td></tr>
-                <tr><td>Geert Henderickx</td><td>32</td><td><a href="mailto:geert.henderickx01@telenet.be">geert.henderickx01@telenet.be</a></td><td><a href="tel:+32473217151">+32 473 21 71 51</a></td></tr>
+                <tr><td>Pascal Facon</td><td>29,2</td><td><a href="mailto:pascal@facon.be">pascal@facon.be</a></td><td><a href="tel:+32495551613">+32 495 55 16 13</a></td></tr>
+                <tr><td>Arne De Schuyteneer</td><td>16,7</td><td><a href="mailto:arne.de.schuyteneer@telenet.be">arne.de.schuyteneer@telenet.be</a></td><td><a href="tel:+32472920397">+32 472 92 03 97</a></td></tr>
+                <tr><td>Wim De Saedeleer</td><td>17,4</td><td><a href="mailto:wim.desaedeleer@fluvius.be">wim.desaedeleer@fluvius.be</a></td><td><a href="tel:+32476226259">+32 476 22 62 59</a></td></tr>
+                <tr><td>Joris Van Damme</td><td>29,9</td><td><a href="mailto:van.damme.joris@telenet.be">van.damme.joris@telenet.be</a></td><td><a href="tel:+32478951365">+32 478 95 13 65</a></td></tr>
+                <tr><td>Koen Ponnet</td><td>16,3</td><td><a href="mailto:koen.ponnet@outlook.com">koen.ponnet@outlook.com</a></td><td><a href="tel:+32493486142">+32 493 48 61 42</a></td></tr>
+                <tr><td>Kris D'Hooghe</td><td>16,2</td><td><a href="mailto:krisd@telenet.be">krisd@telenet.be</a></td><td><a href="tel:+32475641403">+32 475 64 14 03</a></td></tr>
+                <tr><td>Geert Henderickx</td><td>33,9</td><td><a href="mailto:geert.henderickx01@telenet.be">geert.henderickx01@telenet.be</a></td><td><a href="tel:+32473217151">+32 473 21 71 51</a></td></tr>
             </tbody>
         </table>
         </div>
@@ -873,6 +923,43 @@
         <h3>Spelformule &mdash; Stableford Individueel</h3>
         <p style="font-size:0.88rem;color:var(--grey);line-height:1.6;margin-bottom:0.5rem;">
             Drie rondes individueel Stableford met handicap. De flights voor woensdag en donderdag liggen vast (zie hieronder). De samenstelling op vrijdag hangt af van het Stableford-klassement na de eerste twee rondes: de vier beste scores spelen samen in de laatste flight op Benamor.
+        </p>
+    </div>
+
+    <div class="card info" style="margin-top:0;">
+        <h3>Extra Slagen per Baan</h3>
+        <p style="font-size:0.82rem;color:var(--grey-light);line-height:1.5;margin-bottom:0.5rem;">
+            Baanhandicap = HCP-index &times; (Slope / 113) + (CR &minus; Par), afgerond. Dit is het aantal extra slagen dat je krijgt, verdeeld over de holes volgens de Stroke Index van de baan.
+        </p>
+        <div class="player-table-wrap">
+        <table class="strokes-table">
+            <thead>
+                <tr>
+                    <th>Naam</th>
+                    <th>HCP</th>
+                    <th>Tee</th>
+                    <th>Quinta da Ria<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">Par 72</span></th>
+                    <th>Quinta do Vale<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">Par 72</span></th>
+                    <th>Benamor<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">Par 71</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Kris D'Hooghe</td><td>16,2</td><td style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:var(--accent);">Geel</td><td>18</td><td>19</td><td>12</td></tr>
+                <tr><td>Koen Ponnet</td><td>16,3</td><td style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:var(--accent);">Geel</td><td>18</td><td>19</td><td>12</td></tr>
+                <tr><td>Arne De Schuyteneer</td><td>16,7</td><td style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:var(--accent);">Geel</td><td>18</td><td>19</td><td>13</td></tr>
+                <tr><td>Wim De Saedeleer</td><td>17,4</td><td style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:var(--accent);">Geel</td><td>19</td><td>20</td><td>13</td></tr>
+                <tr><td>Pascal Facon</td><td>29,2</td><td style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:var(--blue);">Blauw*</td><td>28</td><td>30</td><td>25</td></tr>
+                <tr><td>Joris Van Damme</td><td>29,9</td><td style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:var(--blue);">Blauw*</td><td>29</td><td>31</td><td>26</td></tr>
+                <tr><td>Geert Henderickx</td><td>33,9</td><td style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:var(--blue);">Blauw*</td><td>33</td><td>36</td><td>30</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size:0.78rem;color:var(--grey-light);margin-top:0.5rem;line-height:1.5;">
+            * Benamor heeft geen blauwe tees &mdash; Pascal, Joris en Geert spelen daar ook geel.<br>
+            <strong>Baan-gegevens:</strong>
+            Q. da Ria geel CR 70,9 / Sl 130 &mdash; blauw CR 68,1 / Sl 124 &nbsp;|&nbsp;
+            Q. do Vale geel CR 71,9 / Sl 130 &mdash; blauw CR 69,9 / Sl 126 &nbsp;|&nbsp;
+            Benamor geel CR 66,9 / Sl 113
         </p>
     </div>
 
@@ -1105,7 +1192,7 @@
         </div>
         <h3>Quinta da Ria</h3>
         <div class="course-desc">
-            <div class="designer">Ontwerp: Rocky Roquemore &middot; Par 72 &middot; 6.053 m (yellow tees) &middot; Slope 131 &middot; Geopend 1999</div>
+            <div class="designer">Ontwerp: Rocky Roquemore &middot; Par 72 &middot; 6.053 m (white tees) &middot; Slope 131 &middot; Geopend 2002</div>
             Midden in het Ria Formosa natuurreservaat, een van de mooiste banen van de Oost-Algarve. Brede, open fairways met uitzicht op de Atlantische Oceaan, de zandeilanden en het historische dorpje Cacela Velha op de kliffen. Strategische bunkers en waterhazards houden het interessant, maar de echte troef is de omgeving &mdash; je golft in een beschermd moerasgebied. Regelmatig flamingo's en andere watervogels. Ideale opener: uitdagend genoeg, maar vergevingsgezind.
         </div>
         <div class="card-detail"><span class="icon">&#128205;</span> <a href="https://www.google.com/maps/search/Quinta+da+Ria+Golf+Vila+Nova+de+Cacela" target="_blank">Quinta da Ria, Vila Nova de Cacela</a></div>
